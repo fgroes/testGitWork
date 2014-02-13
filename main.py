@@ -11,7 +11,11 @@ class MainWindow(QtGui.QMainWindow):
 
 	def initUI(self):
 		self.setWindowTitle('basic window')
-
+		self.menu = self.menuBar()
+		self.fileMenu = self.menu.addMenu('&File')
+		exitAction = QtGui.QAction('&Exit', self)
+		exitAction.triggered.connect(QtGui.qApp.quit)
+		self.fileMenu.addAction(exitAction)
 
 
 def main():
